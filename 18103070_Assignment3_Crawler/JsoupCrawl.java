@@ -78,7 +78,7 @@ public class JsoupCrawl {
 		            Cell cell_2 = row2.createCell(cellid++);
 		            cell_2.setCellValue(absHref);
 	           }
-		        if(popped.depth<3)    
+		        if(popped.depth<3)    //upto depth 3
 		        {	
 		        	if(relHref.length()>1)
 		        	if((!hs.contains(absHref))&&(relHref.charAt(0)!='#')&&(absHref.startsWith(u))&&(absHref.charAt(len-4)!='.')&&(!absHref.endsWith(".docx"))&&(!absHref.endsWith(".jpeg")))
