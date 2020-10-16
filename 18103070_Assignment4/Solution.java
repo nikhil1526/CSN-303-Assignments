@@ -59,11 +59,14 @@ public static int replanting(char[][] matrix,int row,int col,int n,int m)
 	if(row>=n-1&&col==m)
 		return 0;
 
+
 	if(col==m)
 	{
 		col=0;
 		row=row+1;
 	}
+
+	// System.out.println(row+" "+col);
 
 
 	int left=0,right=0,top=0,bottom=0;
@@ -83,16 +86,23 @@ public static int replanting(char[][] matrix,int row,int col,int n,int m)
 
 	if(left==1||top==1)
 	{	
+		char temp=matrix[row][col];
 		matrix[row][col]='#';
-		return replanting(matrix,row,col+1,n,m)+1;
+
+		int ans=replanting(matrix,row,col+1,n,m)+1;
+		matrix[row][col]=temp;
+		return ans;
 	}
 	else if(right==1&&bottom==1)
 	{
 		char temp=matrix[row][col];
+		// System.out.println(temp);
 		matrix[row][col]='#';
 		int ans1=replanting(matrix,row,col+1,n,m)+1;
+		// System.out.println(ans1+" "+row+" "+col);
 		matrix[row][col]=temp;
 		int ans2=replanting(matrix,row,col+1,n,m);
+		// System.out.println(ans2+" "+row+" "+col);
 
 		return Math.min(ans1,ans2);
 		
