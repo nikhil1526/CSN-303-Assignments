@@ -91,7 +91,7 @@ public class q2 extends Thread {
 		try {
 			t7.join();
 		} catch (Exception e) {
-			e.printStackTrace();
+			
 		}
 
 		t8.start();
