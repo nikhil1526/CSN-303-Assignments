@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<title>Web Page Design</title>
+<head>
+<script>
+
+function Parenthesis (s) {
+
+  const obj = {
+    "(": ")",
+    "{": "}",
+    "[": "]",
+  }
+
+  const stack = [];
+
+  for (const p of s) {
+    if (obj.hasOwnProperty(p)) {
+      stack.push(p)
+    } else {
+        if(stack.length==0)
+        return false;
+        
+      const closed = stack.pop();
+      if (p !== obj[closed]) {
+        return false;
+      }
+    }
+  }
+
+  return stack.length === 0;
+}
+
+
+var s=window.prompt("Enter String: ");
+var result=Parenthesis(s);
+document.write(result);
+
+</script>
+</head>
+<body>
+</body>
+</html>

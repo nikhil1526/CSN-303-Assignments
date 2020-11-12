@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<title>Web Page Design</title>
+<head>
+<script>
+
+function triangle (x,asterisk) {
+
+for(var i=1;i<=x;i++)
+{
+    for(var j=1;j<=x-i;j++)
+    {
+        
+    document.write("_");
+    }
+    
+    for(var k=1;k<=2*i-1;k++)
+    {
+    if(i==1&&asterisk==true)
+    document.write("*");
+    else
+    document.write("0");
+    
+    }
+    
+    document.write("<br>");
+    
+}
+}
+function pole (x) {
+
+for(var i=1;i<=x;i++)
+{
+    for(var j=1;j<=x-2;j++)
+    document.write("_");
+    
+    
+    document.write("000");
+    
+    document.write("<br>");
+    
+}
+}
+var sections=window.prompt("Enter number of sectons:");
+var rows=window.prompt("Enter number of rows:");
+triangle(rows,true);
+for(var i=1;i<=sections-1;i++)
+triangle(rows,false);
+pole(rows);
+
+
+</script>
+</head>
+<body>
+</body>
+</html>
